@@ -2,7 +2,9 @@
 precision highp float;
 
 // feito com base nos artigos deste site: https://iquilezles.org/articles
+// onde peguei as sdfs
 // e nos videos deste canal: https://www.youtube.com/@TheArtofCodeIsCool
+// onde aprendi o ray marching em si, e a criar uma cena com luz e sombras
 
 #define MAX_STEPS 100
 #define MAX_DIST 100.
