@@ -8,7 +8,8 @@ A cena tem uma matéria escura decontrolada, e ao clicar em estabilizar,
 ela suavemente se controla. Ao desestabilizar, ela volta a ficar descontrolada.
 
 Este trabalho foi feito com base nos artigos deste site: https://iquilezles.org/articles
-e nos videos deste canal: https://www.youtube.com/@TheArtofCodeIsCool
+onde peguei as sdfs, e nos videos deste canal: https://www.youtube.com/@TheArtofCodeIsCool,
+onde aprendi o ray marching em si, e a criar uma cena com luz e sombras.
 
 Para rodar o trabalho:
 
