@@ -13,6 +13,21 @@ async function main() {
     return;
   }
 
+  let isStabilized = 0;
+
+  const btnEl = document.getElementById('btn');
+  
+  document.getElementById('btn').addEventListener("click", function() {
+    isStabilized = +!isStabilized;
+    time = 0;
+    if (btnEl.innerHTML === "Estabilizar") {
+      btnEl.innerHTML = "Desestabilizar";
+    } else {
+      btnEl.innerHTML = "Estabilizar";
+    }
+
+  });
+
   // load shaders
   const vs = await require('shaders/vertex.glsl')
   const fs = await require('shaders/fragment.glsl')
@@ -26,6 +41,7 @@ async function main() {
   // look up uniform locations
   const resolutionLocation = gl.getUniformLocation(program, "iResolution");
   const timeLocation = gl.getUniformLocation(program, "iTime");
+  const stabilizedLocation = gl.getUniformLocation(program, "iStabilized");
 
   // Create a vertex array object (attribute state)
   const vao = gl.createVertexArray();
@@ -83,6 +99,7 @@ async function main() {
 
     gl.uniform2f(resolutionLocation, gl.canvas.width, gl.canvas.height);
     gl.uniform1f(timeLocation, time);
+    gl.uniform1i(stabilizedLocation, isStabilized);
 
     gl.drawArrays(
         gl.TRIANGLES,
